@@ -4,6 +4,10 @@ class MoviesList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { movies: []};
+
+  }
+
+  componentDidMount() {
     fetch("http://www.omdbapi.com/?page=10&plot=full&s=fast&apikey=2528cba3")
       .then(res => res.json())
       .then((result) => {
@@ -25,7 +29,7 @@ class MoviesList extends React.Component {
           this.state.movies.map((item, index) => {
             return (
               <div key={index}>
-                <p >{item['Title']}</p>
+                <p>{item['Title']}</p>
                 <img src={item['Poster']} />
               </div>
             );
