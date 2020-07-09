@@ -7,6 +7,7 @@ class MoviesList extends React.Component {
 
   }
 
+  // https://es.reactjs.org/docs/state-and-lifecycle.html
   componentDidMount() {
     fetch("http://www.omdbapi.com/?page=10&plot=full&s=fast&apikey=2528cba3")
       .then(res => res.json())
